@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import firstpic from './profile/img/rick.png'
+import secondpic from './profile/img/morty.png'
+
+// pages
+import Name from './profile/profile component/fullname'
+import Bio from './profile/profile component/bio'
+import Prof from './profile/profile component/profession'
+
+
 
 function App() {
+  const alertmyinput = name => alert(name)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+    <div >
+      <Name name="rick"><img src={firstpic} alt="rickpic"/></Name>
+      <Bio bio="Rick Sanchez"/>
+      <Prof name="rick" profession="n alcoholic scientist" alertmyinput={alertmyinput}/>
     </div>
+
+    <div >
+    <Name name="morty"><img src={secondpic} alt="mortypic"/></Name>
+    <Bio bio="Morty Smith"/>
+    <Prof name="morty" profession=" good boy" alertmyinput={alertmyinput}/>
+  </div>
+  </div>
   );
 }
 
